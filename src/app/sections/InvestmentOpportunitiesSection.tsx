@@ -177,19 +177,12 @@ const InvestmentOpportunitiesSection = () => {
                         <div>
                           <button 
                             onClick={handleInvestClick}
-                            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-green-600 hover:bg-green-700"
+                            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md bg-primary text-primary-foreground hover:bg-primary/90"
                           >
                             Invest Now
                           </button>
                         </div>
-                        <div>
-                          <Link
-                            href="/learn-more"
-                            className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
-                          >
-                            Learn More
-                          </Link>
-                        </div>
+                        
                       </motion.div>
                     </motion.div>
                     
