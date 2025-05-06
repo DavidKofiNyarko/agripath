@@ -60,7 +60,7 @@ const HeroSection = () => {
 
         {/* Stacked Avatars + Investor Count */}
         <div className="flex flex-col items-center justify-center space-y-4 mb-8 sm:mb-10 w-full px-4">
-          <div className="flex flex-col sm:flex-row items-center justify-center rounded-full py-2 space-y-3 sm:space-y-0">
+          {/* <div className="flex flex-col sm:flex-row items-center justify-center rounded-full py-2 space-y-3 sm:space-y-0">
             <div className="flex -space-x-2 sm:-space-x-3">
               <img
                 className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-gray-200"
@@ -83,11 +83,11 @@ const HeroSection = () => {
                 src="https://picsum.photos/seed/avatar5/40"
                 alt="Avatar 5" />
             </div>
+            </div> */}
             <span className="text-center sm:text-left ml-0 sm:ml-4 text-black text-sm sm:text-base font-medium">
               <span className="text-background font-bold">200+</span> investors
               and maybe you 🫵
             </span>
-          </div>
         </div>
 
         {/* CTA Button */}

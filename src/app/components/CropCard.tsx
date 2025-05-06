@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from 'next/link';
 import { Crop } from '../data/crops';
@@ -10,39 +9,43 @@ interface CropCardProps {
 
 const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true }) => {
   return (
-    <div className="flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-      {/* Image with status badge */}
-      <Link href={`/crops/${crop.slug}`} className="relative rounded-t-lg overflow-hidden block">
-        <img
-          src={crop.image}
-          alt={crop.name}
-          className="w-full h-28 sm:h-32 md:h-36 lg:h-40 object-cover"
-        />
-        <div
-          className={`absolute top-2 right-2 px-2 sm:px-3 py-1 rounded-full text-xs font-medium text-white ${
-            crop.status === "Available"
-              ? "bg-green-600"
-              : "bg-red-500"
-          }`}
-        >
-          {crop.status}
+    <div className="bg-white w-[288px] h-[420px] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+      {/* Image */}
+      <Link href={`/crops/${crop.slug}`} className="block h-[209px] rounded-md">
+        <div className="relative h-full">
+          <img
+            src={crop.image}
+            alt={crop.name}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute top-2 right-2">
+            <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
+              {crop.status}
+            </span>
+          </div>
         </div>
       </Link>
 
-      {/* Investment details */}
-      <div className="px-2 sm:px-3 pb-3 pt-2 flex-grow flex flex-col">
-        <Link href={`/crops/${crop.slug}`} className="hover:text-green-600 transition-colors">
-          <h3 className="font-bold text-sm sm:text-base text-gray-800">{crop.name}</h3>
-        </Link>
-        <div className="text-xs sm:text-sm text-gray-600 mb-1">
-          <span>{crop.price}</span> <span>{crop.unit}</span>
+      {/* Content */}
+      <div className="p-4 flex-1 flex flex-col h-[200px]">
+        <h3 className="text-lg font-bold text-gray-900 line-clamp-1">{crop.name}</h3>
+        
+        <div className="mt-1 flex items-baseline">
+          <span className="text-xl font-bold text-gray-900">{crop.price}</span>
+          <span className="ml-1 text-sm text-yellow-500">{crop.unit}</span>
         </div>
-        <div className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3">{crop.roi}</div>
 
-        {/* Invest button */}
+        <div className="mt-2 flex-1">
+          <div className="text-sm text-gray-600">ROI: {crop.roiValue}</div>
+          <div className="text-sm text-gray-600 mt-0.5">Starting - {crop.maturityTime}</div>
+          <div className="flex items-center mt-0.5">
+            <span className="text-sm text-green-500">{crop.unitsSold} Units Available</span>
+          </div>
+        </div>
+
         {showButton && (
-          <Link href={`/crops/${crop.slug}`} className="mt-auto">
-            <button className="w-full border border-green-600 text-green-600 hover:bg-green-50 py-1.5 sm:py-2 px-2 sm:px-4 rounded text-xs sm:text-sm transition duration-300">
+          <Link href={`/crops/${crop.slug}`} className="block mt-auto">
+            <button className="w-[272px] h-[40px] gap-2 py-2 px-0 rounded-lg border border-primary hover:bg-[#FAF3E7] text-primary font-bold hover:bg-[#f5e9d7] transition duration-300 text-sm">
               {crop.status === "Available" ? "Invest Now" : "Learn More"}
             </button>
           </Link>
@@ -52,4 +55,4 @@ const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true }) => {
   );
 };
 
-export default CropCard; 
+export default CropCard;

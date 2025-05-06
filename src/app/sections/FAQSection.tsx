@@ -1,7 +1,14 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronUp, ChevronDown, Pin } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Gochi_Hand } from "next/font/google";
 
+const gochiHand = Gochi_Hand({
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+});
 const HowItWorksAndFAQ = () => {
   const [openQuestion, setOpenQuestion] = useState<number | string | null>(
     null
@@ -67,8 +74,14 @@ const HowItWorksAndFAQ = () => {
     <div className="w-full ">
       {/* How It Works Section */}
       <div className=" py-8 sm:py-12 md:py-16 px-8">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 text-center mb-2">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto"
+        >
+          <h2 className={`text-2xl sm:text-3xl md:text-5xl font-bold text-primary text-center mb-2 ${gochiHand.className}`}>
             How It Works
           </h2>
           <p className="text-sm sm:text-base text-center text-gray-800 mb-8 sm:mb-12">
@@ -76,30 +89,40 @@ const HowItWorksAndFAQ = () => {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {steps.map((step) => (
-              <div
+            {steps.map((step, index) => (
+              <motion.div
                 key={step.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
                 className="flex flex-col items-center text-center p-4 bg-white/50 rounded-lg "
               >
                 <div className="relative mb-3 sm:mb-4 flex items-center gap-1">
                   <Pin className="text-red-500 mt-2 rotate-45" size={20}  />
-                  <h3 className="text-lg sm:text-xl font-bold text-green-600 mt-2">
+                  <h3 className={`text-lg sm:text-2xl font-bold text-primary mt-2 ${gochiHand.className}`}>
                     Step {step.id}
                   </h3>
                 </div>
                 <h4 className="font-bold text-gray-800 mb-2 text-base sm:text-lg">{step.title}</h4>
                 <p className="text-xs sm:text-sm text-gray-600">{step.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* FAQ Section */}
       <div className="relative py-8 sm:py-12 md:py-16 px-4 faq-section min-h-[400px] sm:min-h-[470px]">
         {/* Background Image with a Cleaner Overlay */}
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-6xl mx-auto relative z-10"
+        >
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             <div className="lg:col-span-1">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-black mb-6 lg:mb-0">
@@ -109,29 +132,49 @@ const HowItWorksAndFAQ = () => {
 
             <div className="lg:col-span-2">
               {faqs.map((faq) => (
-                <div key={faq.id} className="border-b border-green-500">
+                <motion.div 
+                  key={faq.id} 
+                  className="border-b border-green-500"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                  viewport={{ once: true }}
+                >
                   <button
                     className="w-full py-3 sm:py-4 flex justify-between items-center text-black text-left text-sm sm:text-base"
                     onClick={() => toggleQuestion(faq.id)}
                   >
                     <span className="pr-4">{faq.question}</span>
-                    {openQuestion === faq.id ? (
-                      <ChevronUp className="flex-shrink-0" size={18}  />
-                    ) : (
-                      <ChevronDown className="flex-shrink-0" size={18} />
-                    )}
+                    <motion.div
+                      animate={{ rotate: openQuestion === faq.id ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {openQuestion === faq.id ? (
+                        <ChevronUp className="flex-shrink-0" size={18} />
+                      ) : (
+                        <ChevronDown className="flex-shrink-0" size={18} />
+                      )}
+                    </motion.div>
                   </button>
 
-                  {openQuestion === faq.id && (
-                    <div className="pb-3 sm:pb-4 text-black opacity-90">
-                      <p className="text-sm sm:text-base">{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
+                  <AnimatePresence>
+                    {openQuestion === faq.id && (
+                      <motion.div 
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="pb-3 sm:pb-4 text-black opacity-90"
+                      >
+                        <p className="text-sm sm:text-base">{faq.answer}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

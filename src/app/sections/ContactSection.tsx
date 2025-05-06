@@ -25,7 +25,7 @@ const ContactSection = () => {
   return (
     <>
       <div className="w-full h-full">
-        <div className="relative z-10 w-full text-center py-24 contact-section overflow-hidden">
+        <div className="relative z-10 w-full text-center py-24 contact-section h-[530px] flex flex-col justify-center items-center overflow-hidden">
           <div className="absolute -z-10 inset-0 bg-gradient-to-t from-background via-background/95 to-background/60 bg-opacity-85"></div>
           <h1 className="text-white text-4xl md:text-5xl font-bold mb-2">
             Partner Us!

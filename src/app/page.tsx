@@ -12,18 +12,29 @@ const AgriPathLandingPage = () => {
   return (
     <div className="min-h-screen font-sans">
       {/* Navbar Component */}
-      {/* <Navbar /> */}
+      <Navbar />
 
       {/* Hero Section Component */}
-      <HeroSection />
-      <AboutSection />
-      <InvestmentOpportunitiesSection />
-      {/* <CallToActionSection /> */}
-      <AvailableInvestments />
+      <section id="home">
+        <HeroSection />
+      </section>
+      
+      <section id="about">
+        <AboutSection />
+      </section>
+      
+      <section id="projects">
+        <InvestmentOpportunitiesSection />
+        <AvailableInvestments />
+      </section>
+      
       <HowItWorksAndFAQ />
-      <ContactSection />
+      
+      <section id="contact">
+        <ContactSection />
+      </section>
+      
       <AgripathFooter />
-      {/* Additional content would be added here */}
     </div>
   );
 };

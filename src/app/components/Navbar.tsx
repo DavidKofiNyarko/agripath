@@ -1,6 +1,6 @@
 'use client'
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import InvestmentFormModal from "./InvestmentFormModal";
@@ -13,11 +13,19 @@ const Navbar = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const scrollToSection = useCallback((sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  }, []);
+
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
-    { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact" },
+    { href: "home", label: "Home" },
+    { href: "projects", label: "Projects" },
+    { href: "about", label: "About Us" },
+    { href: "contact", label: "Contact" },
   ];
 
   const containerVariants = {
@@ -73,7 +81,14 @@ const Navbar = () => {
         <div className="w-full max-w-6xl mx-auto px-6">
           <div className="flex justify-between items-center h-full">
             <motion.div variants={itemVariants} className="flex items-center -ml-8">
-              <Link href="/" className="flex-shrink-0">
+              <a 
+                href="#home" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('home');
+                }}
+                className="flex-shrink-0"
+              >
                 <motion.img 
                   src="/Logo.png" 
                   alt="AgriPath Logo" 
@@ -81,14 +96,18 @@ const Navbar = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 />
-              </Link>
+              </a>
             </motion.div>
 
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <motion.div key={link.href} variants={itemVariants}>
-                  <Link
-                    href={link.href}
+                  <a
+                    href={`#${link.href}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
                     className="text-base text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium"
                   >
                     <motion.span
@@ -97,7 +116,7 @@ const Navbar = () => {
                     >
                       {link.label}
                     </motion.span>
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
             </div>
@@ -156,26 +175,22 @@ const Navbar = () => {
             >
               {navLinks.map((link) => (
                 <motion.div key={link.href} variants={itemVariants}>
-                  <Link
-                    href={link.href}
+                  <a
+                    href={`#${link.href}`}
                     className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200 text-base"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </motion.div>
               ))}
               <motion.div 
                 className="pt-4 pb-3 border-t border-gray-200"
                 variants={itemVariants}
               >
-                {/* <Link
-                  href="/login"
-                  className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-gray-50 rounded-md transition-colors duration-200 text-base"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Sign In
-                </Link> */}
                 <button
                   onClick={() => {
                     setIsMenuOpen(false);

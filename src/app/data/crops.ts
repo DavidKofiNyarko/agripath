@@ -44,31 +44,31 @@ export const crops: Crop[] = [
     ],
     maturityTime: "2027-09-30"
   },
-  {
-    id: 2,
-    name: "Yellow Maize",
-    slug: "yellow-maize",
-    image: "/crops/Maize.png",
-    price: "GHS 3,000",
-    unit: "per Unit",
-    roi: "ROI: 15-20%",
-    roiValue: "15-20%",
-    duration: "4-5 Months",
-    unitsSold: "2,760",
-    totalUnits: "4,000",
-    status: "Available",
-    description: "Invest in our sustainable maize farming project",
-    about: "Yellow maize is a staple food in many African countries and has consistent demand in both local and international markets. Our maize farming projects use sustainable practices and high-yield varieties to maximize returns for investors.",
-    benefits: [
-      "Strong demand from both human consumption and animal feed markets",
-      "Drought-resistant varieties for reliable harvests",
-      "6-Monthly Returns",
-      "Eco-Friendly Farming",
-      "Sustainability and Biodiversity",
-      "Green Agriculture Practices"
-    ],
-    maturityTime: "2027-10-15"
-  },
+  // {
+  //   id: 2,
+  //   name: "Yellow Maize",
+  //   slug: "yellow-maize",
+  //   image: "/crops/Maize.png",
+  //   price: "GHS 3,000",
+  //   unit: "per Unit",
+  //   roi: "ROI: 15-20%",
+  //   roiValue: "15-20%",
+  //   duration: "4-5 Months",
+  //   unitsSold: "2,760",
+  //   totalUnits: "4,000",
+  //   status: "Available",
+  //   description: "Invest in our sustainable maize farming project",
+  //   about: "Yellow maize is a staple food in many African countries and has consistent demand in both local and international markets. Our maize farming projects use sustainable practices and high-yield varieties to maximize returns for investors.",
+  //   benefits: [
+  //     "Strong demand from both human consumption and animal feed markets",
+  //     "Drought-resistant varieties for reliable harvests",
+  //     "6-Monthly Returns",
+  //     "Eco-Friendly Farming",
+  //     "Sustainability and Biodiversity",
+  //     "Green Agriculture Practices"
+  //   ],
+  //   maturityTime: "2027-10-15"
+  // },
   {
     id: 3,
     name: "Chilli Pepper",
@@ -81,7 +81,7 @@ export const crops: Crop[] = [
     duration: "3-4 Months",
     unitsSold: "1,850",
     totalUnits: "3,500",
-    status: "Coming soon",
+    status: "Available",
     description: "Invest in our spicy chilli pepper farming project",
     about: "Chilli peppers are in high demand for local cuisine and export markets. Our chilli pepper farms use sustainable practices to grow high-quality, spicy varieties that command premium prices in the market.",
     benefits: [
@@ -94,31 +94,31 @@ export const crops: Crop[] = [
     ],
     maturityTime: "2027-11-20"
   },
-  {
-    id: 4,
-    name: "Okro",
-    slug: "okro",
-    image: "/crops/okro.png",
-    price: "GHS 3,000",
-    unit: "per Unit",
-    roi: "ROI: 15-20%",
-    roiValue: "15-20%",
-    duration: "2-3 Months",
-    unitsSold: "1,200",
-    totalUnits: "2,500",
-    status: "Available",
-    description: "Invest in our nutritious okro farming project",
-    about: "Okro (okra) is a nutritious vegetable with high demand in local markets. Our okro farming projects focus on organic cultivation methods that enhance crop quality and yield.",
-    benefits: [
-      "Quick growing cycle allows for multiple harvests per year",
-      "Low maintenance crop with good market demand",
-      "6-Monthly Returns",
-      "Eco-Friendly Farming",
-      "Sustainability and Biodiversity",
-      "Green Agriculture Practices"
-    ],
-    maturityTime: "2027-08-10"
-  },
+  // {
+  //   id: 4,
+  //   name: "Okro",
+  //   slug: "okro",
+  //   image: "/crops/okro.png",
+  //   price: "GHS 3,000",
+  //   unit: "per Unit",
+  //   roi: "ROI: 15-20%",
+  //   roiValue: "15-20%",
+  //   duration: "2-3 Months",
+  //   unitsSold: "1,200",
+  //   totalUnits: "2,500",
+  //   status: "Available",
+  //   description: "Invest in our nutritious okro farming project",
+  //   about: "Okro (okra) is a nutritious vegetable with high demand in local markets. Our okro farming projects focus on organic cultivation methods that enhance crop quality and yield.",
+  //   benefits: [
+  //     "Quick growing cycle allows for multiple harvests per year",
+  //     "Low maintenance crop with good market demand",
+  //     "6-Monthly Returns",
+  //     "Eco-Friendly Farming",
+  //     "Sustainability and Biodiversity",
+  //     "Green Agriculture Practices"
+  //   ],
+  //   maturityTime: "2027-08-10"
+  // },
   {
     id: 5,
     name: "Pepper",
@@ -156,7 +156,7 @@ export const crops: Crop[] = [
     duration: "4-5 Months",
     unitsSold: "980",
     totalUnits: "2,000",
-    status: "Coming soon",
+    status: "Available",
     description: "Invest in our nutritious sweet potato farming project",
     about: "Sweet potatoes are nutrient-rich root vegetables with growing demand in health-conscious markets. Our sweet potato farms focus on growing high-yield, nutritious varieties.",
     benefits: [
@@ -181,7 +181,7 @@ export const crops: Crop[] = [
     duration: "4-6 Months",
     unitsSold: "1,500",
     totalUnits: "3,000",
-    status: "Coming soon",
+    status: "Available",
     description: "Invest in our essential rice farming project",
     about: "Rice is a staple food for billions of people worldwide. Our rice farming projects use sustainable irrigation and cultivation methods to produce high-quality rice varieties.",
     benefits: [
@@ -206,7 +206,7 @@ export const crops: Crop[] = [
     duration: "9-10 Months",
     unitsSold: "800",
     totalUnits: "1,500",
-    status: "Coming soon",
+    status: "Available",
     description: "Invest in our aromatic ginger farming project",
     about: "Ginger is a high-value spice with applications in food, beverages, and medicinal products. Our ginger farming projects focus on organic cultivation of premium varieties.",
     benefits: [
