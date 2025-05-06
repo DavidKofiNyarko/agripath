@@ -1,9 +1,23 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 import CropCard from "../components/CropCard";
 import { crops } from "../data/crops";
-import Link from "next/link";
+import InvestmentFormModal from "../components/InvestmentFormModal";
 
 const AvailableInvestments = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCrop, setSelectedCrop] = useState<string | undefined>(undefined);
+
+  const handleOpenModal = (cropName: string) => {
+    setSelectedCrop(cropName);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedCrop(undefined);
+  };
+
   return (
     <div id="investments" className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
       {/* Header */}
@@ -17,19 +31,23 @@ const AvailableInvestments = () => {
 
       {/* Investment Grid */}
       <div className="flex justify-center max-w-7xl mx-auto">
-         <div className="grid grid-cols-2  sm:grid-cols-3 gap-4 mb-8 justify-items-center">
+         <div className="grid grid-cols-1  sm:grid-cols-3 gap-4 mb-8 justify-items-center">
         {crops.map((crop) => (
-          <CropCard key={crop.id} crop={crop} />
+          <CropCard 
+            key={crop.id} 
+            crop={crop} 
+            onInvest={() => handleOpenModal(crop.name)}
+          />
         ))}
       </div>
      </div>
 
-      {/* View All button */}
-      {/* <div className="flex justify-center mt-4 sm:mt-6">
-        <Link href="/crops" className="border border-green-600 text-green-600 hover:bg-green-50 py-1.5 sm:py-2 px-8 sm:px-12 rounded-full text-sm sm:text-base transition duration-300">
-          View All
-        </Link>
-      </div> */}
+      {/* Investment Form Modal */}
+      <InvestmentFormModal 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+        preSelectedCrop={selectedCrop}
+      />
     </div>
   );
 };

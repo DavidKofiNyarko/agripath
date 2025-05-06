@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Link from 'next/link';
 import { Crop } from '../data/crops';
@@ -5,13 +6,24 @@ import { Crop } from '../data/crops';
 interface CropCardProps {
   crop: Crop;
   showButton?: boolean;
+  onInvest?: () => void;
 }
 
-const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true }) => {
+const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true, onInvest }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    if (onInvest) {
+      e.preventDefault();
+      onInvest();
+    }
+  };
+
   return (
     <div className="bg-white w-[288px] h-[420px] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
       {/* Image */}
-      <Link href={`/crops/${crop.slug}`} className="block h-[209px] rounded-md">
+      <div 
+        className="block h-[209px] rounded-md cursor-pointer" 
+        onClick={onInvest ? handleClick : undefined}
+      >
         <div className="relative h-full">
           <img
             src={crop.image}
@@ -24,7 +36,7 @@ const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true }) => {
             </span>
           </div>
         </div>
-      </Link>
+      </div>
 
       {/* Content */}
       <div className="p-4 flex-1 flex flex-col h-[200px]">
@@ -44,11 +56,12 @@ const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true }) => {
         </div>
 
         {showButton && (
-          <Link href={`/crops/${crop.slug}`} className="block mt-auto">
-            <button className="w-[272px] h-[40px] gap-2 py-2 px-0 rounded-lg border border-primary hover:bg-[#FAF3E7] text-primary font-bold hover:bg-[#f5e9d7] transition duration-300 text-sm">
-              {crop.status === "Available" ? "Invest Now" : "Learn More"}
-            </button>
-          </Link>
+          <button 
+            onClick={handleClick}
+            className="w-[272px] h-[40px] gap-2 py-2 px-0 rounded-lg border border-primary hover:bg-[#FAF3E7] text-primary font-bold hover:bg-[#f5e9d7] transition duration-300 text-sm"
+          >
+            {crop.status === "Available" ? "Invest Now" : "Learn More"}
+          </button>
         )}
       </div>
     </div>
