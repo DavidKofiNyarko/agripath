@@ -162,15 +162,7 @@ export default function OfftakerFormModal({ isOpen, onClose }: OfftakerFormModal
             transition={{ type: 'spring', duration: 0.5 }}
             className="bg-white border-1 border-green-800 rounded-3xl w-full max-w-lg p-6 relative"
             onClick={e => e.stopPropagation()}
-          >
-            {/* Progress Indicator */}
-            {/* <div className="flex items-center justify-center mb-6">
-              <div className="flex items-center">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${page === 1 ? 'border-green-900' : 'border-gray-300'} bg-green-900 text-lg font-bold text-yellow-600`}>1</div>
-                <div className="w-25 h-1 bg-green-900 mx-0"></div>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 ${page === 2 ? 'border-green-900' : 'border-green-800'} bg-white text-lg font-bold text-green-700`}>2</div>
-              </div>
-            </div> */}
+        >
 
               {/* Rounded Indicators */}
                  <div className="flex justify-center items-center mb-6">
