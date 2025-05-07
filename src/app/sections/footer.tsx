@@ -11,7 +11,7 @@ const AgripathFooter = () => {
             <div className="flex items-center gap-3">
               <div className="bg-primary shadow-lg rounded-lg  flex items-center  rounded-r-full">
               <img
-                src="/logo.png"
+                src="/Logo.png"
                 alt="AgriPath Logo"
                 className="h-20 w-20"
               />
