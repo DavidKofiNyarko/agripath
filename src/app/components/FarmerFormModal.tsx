@@ -38,6 +38,44 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
   const [isLoading, setIsLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
 
+   const [formErrors, setFormErrors] = useState({
+        name: '',
+        email: '',
+        phone: '',
+      });
+  
+    const validateField = (field: string, value: string) => {
+      let error = '';
+  
+      switch (field) {
+        case 'name':
+          if (!/^[a-zA-Z\s'-]+$/.test(value)) {
+            error = 'Name must only contain letters, spaces, and hyphens.';
+          }
+          break;
+        case 'email':
+          if (value && !/^\S+@\S+\.\S+$/.test(value)) {
+            error = 'Enter a valid email address.';
+          }
+          break;
+        case 'phone':
+          if (value && !/^\d+$/.test(value)) {
+            error = 'Phone number must only contain digits.';
+          }
+          break;
+        default:
+          break;
+      }
+  
+      setFormErrors((prev) => ({ ...prev, [field]: error }));
+      return error === '';
+    };
+  
+    const handleInputChange = (field: string, value: string) => {
+      validateField(field, value);
+      setFormData((prev) => ({ ...prev, [field]: value }));
+    };
+
 // Reset form page whenever modal opens
     useEffect(() => {
       if (isOpen) {
@@ -59,13 +97,13 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
       console.log("Request Payload:", formData);
       
        
-      const airtableBaseId = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID;
+       const airtableBaseId = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID;
       const airtableTableId= process.env.NEXT_PUBLIC_AIRTABLE_FARMER_TABLE_ID;
       const airtableApiKey= process.env.NEXT_PUBLIC_AIRTABLE_API_TOKEN;
       try {
         // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 2000));
-        await fetch(`https://api.airtable.com/v0/${airtableBaseId}/${airtableTableId}`,{
+       await fetch(`https://api.airtable.com/v0/${airtableBaseId}/${airtableTableId}`,{
           method:"POST",
           headers:{
             Authorization:`Bearer ${airtableApiKey}`,
@@ -84,7 +122,7 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
               farmInputsNeeded:formData.farmInputsNeeded
   
             }
-          })
+          })         
           
         })
         setShowSuccess(true);
@@ -169,7 +207,7 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            className="bg-white  border-2 border-green-800 rounded-3xl w-full max-w-lg p-6 relative"
+            className="bg-white  border-2 border-green-800 rounded-3xl w-full max-w-lg p-6 relative max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             {/* Rounded Indicators */}
@@ -221,10 +259,12 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
                     type="text"
                     required
                     value={formData.name}
-                    onChange={e => setFormData({ ...formData, name: e.target.value })}
+                    // onChange={e => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
                     placeholder="Michael Doe"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   />
+                  {formErrors.name && <p className="text-red-500 text-sm">{formErrors.name}</p>}  
                 </div>
 
                 <div>
@@ -248,11 +288,13 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
                       type="tel"
                       required
                       value={formData.phone}
-                      onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                      // onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
                       placeholder="55 567 8905"
                       className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
+                  {formErrors.phone && <p className="text-red-500 text-sm">{formErrors.phone}</p>}
                 </div>
 
                 <div>
@@ -263,10 +305,12 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
                     type="email"
                     required
                     value={formData.email}
-                    onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    // onChange={e => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
                     placeholder="michael@example.com"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent"
                   />
+                  {formErrors.email && <p className="text-red-500 text-sm">{formErrors.email}</p>}
                 </div>
 
                 <div>
@@ -297,7 +341,7 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
                   />
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex flex-col gap-4 md:flex-row md:justify-between">
                   <button
                     type="button"
                     onClick={onClose}
