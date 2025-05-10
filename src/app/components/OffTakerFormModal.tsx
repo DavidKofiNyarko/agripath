@@ -337,14 +337,14 @@ export default function OfftakerFormModal({ isOpen, onClose }: OfftakerFormModal
                   <button
                     type="button"
                     onClick={onClose}
-                    className="py-3 px-23 border-1 border-green-950 bg-white-500 text-green-950 rounded-lg font-bold hover:bg-green-700 transition-all"
+                    className="py-3 px-6 border-1 border-green-950 bg-white-500 text-green-950 rounded-lg font-bold hover:bg-green-700 transition-all"
                   >
                     Cancel
                   </button>
                   <button
                     type="button"
                     onClick={() => setPage(2)}
-                    className="py-3 px-23 bg-green-900 text-white rounded-lg font-medium hover:bg-green-700 transition-all"
+                    className="py-3 px-6 bg-green-900 text-white rounded-lg font-medium hover:bg-green-700 transition-all"
                   >
                     Next
                   </button>
