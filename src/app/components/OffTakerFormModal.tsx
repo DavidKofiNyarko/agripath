@@ -201,7 +201,7 @@ export default function OfftakerFormModal({ isOpen, onClose }: OfftakerFormModal
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: 'spring', duration: 0.5 }}
-            className="bg-white border-1 border-green-800 rounded-3xl w-full max-w-lg p-6 relative overflow-y-auto max-h-[90vh] "
+            className="bg-white border-1 border-green-800 rounded-3xl w-full max-w-lg p-6 relative overflow-y-auto max-h-[90vh]"
             onClick={e => e.stopPropagation()}
         >
 
@@ -333,11 +333,11 @@ export default function OfftakerFormModal({ isOpen, onClose }: OfftakerFormModal
                   </div>
                 </div>
                     
-                <div className="flex flex-col gap-4 md:flex-row md:justify-between">
+                <div className="flex flex-col gap-4 md:flex-row md:justify-between items-center">
                   <button
                     type="button"
                     onClick={onClose}
-                    className="py-3 px-23 border-1 border-green-950 bg-white-500  text-green-950 rounded-lg font-bold hover:bg-green-700 transition-all"
+                    className="py-3 px-23 border-1 border-green-950 bg-white-500 text-green-950 rounded-lg font-bold hover:bg-green-700 transition-all"
                   >
                     Cancel
                   </button>
