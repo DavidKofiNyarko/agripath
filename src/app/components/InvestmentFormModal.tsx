@@ -185,7 +185,7 @@ export default function InvestmentFormModal({ isOpen, onClose }: InvestmentFormM
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="bg-white rounded-3xl w-full max-w-md p-6 relative"
+            className="bg-white rounded-3xl w-full max-w-md p-6 relative overflow-y-auto max-h-[90vh]"
             onClick={e => e.stopPropagation()}
           >
             {/* Close Button */}
