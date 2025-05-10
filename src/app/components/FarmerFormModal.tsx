@@ -341,7 +341,7 @@ export default function FarmerFormModal({ isOpen, onClose }: FarmerFormModalProp
                   />
                 </div>
 
-                <div className="flex flex-col gap-4 md:flex-row md:justify-between">
+                <div className="flex flex-col gap-4 md:flex-row md:justify-between items-center">
                   <button
                     type="button"
                     onClick={onClose}
