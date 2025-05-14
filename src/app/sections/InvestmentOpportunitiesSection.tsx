@@ -195,7 +195,7 @@ const InvestmentOpportunitiesSection = () => {
                         type: "spring",
                         stiffness: 100
                       }}
-                      className="relative h-[400px] overflow-hidden"
+                      className="relative h-[400px] max-w-[621px] overflow-hidden"
                     >
                       <img
                         src={investmentOpportunities[activeIndex].image}

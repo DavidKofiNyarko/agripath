@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const AgripathFooter = () => {
   return (
-    <footer className="bg-primary border-t-4 border-green-950 text-gray-100 text-sm">
+    <footer id='contact-us' className="bg-primary border-t-4 border-green-950 text-gray-100 text-sm">
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-10">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           {/* Logo & Tagline */}
@@ -27,11 +27,11 @@ const AgripathFooter = () => {
           <div className="flex flex-col md:w-1/5 mb-6 md:mb-0">
             <h4 className="text-green-200 font-semibold mb-2">Quick Links</h4>
             <ul className="space-y-1">
-              <li><a href="/about" className="hover:text-green-400 transition">Who We Are</a></li>
-              <li><a href="/invest" className="hover:text-green-400 transition">Investment Opportunities</a></li>
-              <li><a href="/how-it-works" className="hover:text-green-400 transition">How It Works</a></li>
-              <li><a href="/faqs" className="hover:text-green-400 transition">FAQs</a></li>
-              <li><a href="/contact" className="hover:text-green-400 transition">Contact</a></li>
+              <li><a href="#about" className="hover:text-green-400 transition">Who We Are</a></li>
+              <li><a href="#projects" className="hover:text-green-400 transition">Investment Opportunities</a></li>
+              <li><a href="#how-it-works" className="hover:text-green-400 transition">How It Works</a></li>
+              <li><a href="#faqs" className="hover:text-green-400 transition">FAQs</a></li>
+              <li><a href="#contact-us" className="hover:text-green-400 transition">Contact</a></li>
             </ul>
           </div>
           {/* Legal Pages */}
@@ -75,16 +75,16 @@ const AgripathFooter = () => {
             <h4 className="text-green-200 font-semibold mb-2">Follow Us</h4>
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2">
-                <Facebook size={18} /> <a href="#" className="hover:underline">Facebook</a>
+                <Facebook size={18} /> <a href="https://www.facebook.com/share/16VX3ZQwuL/?mibextid=wwXIfr" className="hover:underline">Facebook</a>
               </li>
               <li className="flex items-center gap-2">
-                <Instagram size={18} /> <a href="#" className="hover:underline">Instagram</a>
+                <Instagram size={18} /> <a href="https://www.instagram.com/agripath.ltd?igsh=MWVieTVnNmFybHM3OQ%3D%3D&utm_source=qr" className="hover:underline">Instagram</a>
               </li>
               <li className="flex items-center gap-2">
-                <Linkedin size={18} /> <a href="#" className="hover:underline">LinkedIn</a>
+                <Linkedin size={18} /> <a href="https://www.linkedin.com/company/107099056/admin/dashboard/" className="hover:underline">LinkedIn</a>
               </li>
               <li className="flex items-center gap-2">
-                <Youtube size={18} /> <a href="#" className="hover:underline">Youtube</a>
+                <Youtube size={18} /> <a href="https://www.youtube.com/@AgriPathAfrica" className="hover:underline">Youtube</a>
               </li>
             </ul>
           </div>
