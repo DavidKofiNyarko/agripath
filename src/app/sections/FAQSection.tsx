@@ -121,20 +121,23 @@ const HowItWorksAndFAQ = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-6xl mx-auto relative z-10"
+          className="max-w-7xl mx-auto relative z-10"
         >
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="lg:col-span-1">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium text-black mb-6 lg:mb-0">
-                Frequently Asked Questions
+            <div className="lg:col-span-1 ">
+              <h2 className="font-sans text-5xl font-bold tracking-normal leading-[3rem] text-primary mb-6 lg:mb-0">
+                Frequently Asked
               </h2>
+                <span className={`text-yellow-600 font-bold text-6xl  ${gochiHand.className}`}>
+                Questions  <span className="text-4xl"> (FAQs)</span>
+                </span>
             </div>
 
             <div className="lg:col-span-2">
               {faqs.map((faq) => (
                 <motion.div 
                   key={faq.id} 
-                  className="border-b border-green-500"
+                  className="border-b border-gray-200"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}

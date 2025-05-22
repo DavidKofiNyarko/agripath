@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Check, Loader2, CloudCog } from 'lucide-react';
-import { select } from 'framer-motion/client';
+import { X, Check, Loader2} from 'lucide-react';
 
 interface InvestmentFormModalProps {
   isOpen: boolean;
   onClose: () => void;
+  preSelectedCrop?: string;
 }
 
 const cropOptions = [
@@ -27,13 +27,13 @@ const unitOptions = [
   'Other'
 ];
 
-export default function InvestmentFormModal({ isOpen, onClose }: InvestmentFormModalProps) {
+export default function InvestmentFormModal({ isOpen, onClose, preSelectedCrop }: InvestmentFormModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     countryCode: '+233',
-    selectedCrops: [] as string[],
+    selectedCrops: preSelectedCrop ? [preSelectedCrop] : [] as string[],
     selectedUnits: '',
   });
 
