@@ -70,7 +70,7 @@ const AboutSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-background text-primary-foreground hover:bg-green-700  py-2 px-4 rounded-lg font-medium transition duration-300">
+              <button className="bg-background bg-green-900 text-primary-foreground hover:bg-green-700  py-2 px-4 rounded-lg font-medium transition duration-300">
                 View Available Investment
               </button>
               <button className="border-2 border-gray-300 text-primary-foreground hover:bg-background hover:text-white py-2 px-4 rounded-lg font-medium transition duration-300">

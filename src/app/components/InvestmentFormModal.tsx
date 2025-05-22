@@ -250,8 +250,8 @@ export default function InvestmentFormModal({ isOpen, onClose, preSelectedCrop }
                 <div className="flex gap-2">
                   <select
                     value={formData.countryCode}
-                    // onChange={(e) => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    onChange={(e) => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
+                    // onChange={(e) => handleInputChange('phone', e.target.value)}
                     className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                   >
                     <option value="+233">🇬🇭 +233</option>

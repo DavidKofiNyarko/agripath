@@ -81,7 +81,7 @@ const HowItWorksAndFAQ = () => {
           viewport={{ once: true }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className={`text-2xl sm:text-3xl md:text-5xl font-bold text-primary text-center mb-2 ${gochiHand.className}`}>
+          <h2 id='how-it-works' className={`text-2xl sm:text-3xl md:text-5xl font-bold text-primary text-center mb-2 ${gochiHand.className}`}>
             How It Works
           </h2>
           <p className="text-sm sm:text-base text-center text-gray-800 mb-8 sm:mb-12">
@@ -113,7 +113,7 @@ const HowItWorksAndFAQ = () => {
       </div>
 
       {/* FAQ Section */}
-      <div className="relative py-8 sm:py-12 md:py-16 px-4 faq-section min-h-[400px] sm:min-h-[470px]">
+      <div id='faqs' className="relative py-8 sm:py-12 md:py-16 px-4 faq-section min-h-[400px] sm:min-h-[470px]">
         {/* Background Image with a Cleaner Overlay */}
 
         <motion.div 
