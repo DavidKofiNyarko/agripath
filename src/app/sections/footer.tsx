@@ -7,9 +7,9 @@ const AgripathFooter = () => {
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-10">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           {/* Logo & Tagline */}
-          <div className="flex flex-col items-center md:items-start w-full md:w-1/2 mb-6 md:mb-0">
+          <div className="flex flex-col items-center  md:items-start w-full md:w-1/2 mb-6 md:mb-0">
             <div className="flex items-center gap-3">
-              <div className="bg-primary shadow-lg rounded-lg  flex items-center  rounded-r-full">
+              <div className="bg-primary shadow-lg rounded-lg  flex items-center px-2  rounded-l-full">
               <img
                 src="/Logo.png"
                 alt="AgriPath Logo"
@@ -92,7 +92,7 @@ const AgripathFooter = () => {
         {/* Divider Line */}
         <div className="border-t border-gray-600 my-6"></div>
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-center items-center text-xs text-center md:text-left">
           <div>
             Copyright <span className="text-green-400 font-semibold">AgriPath</span> © 2025 All rights reserved.
           </div>
