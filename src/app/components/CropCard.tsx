@@ -31,7 +31,14 @@ const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true, onInvest }
             className="w-full h-full object-cover"
           />
           <div className="absolute top-2 right-2">
-            <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
+            <span
+              className={`text-white text-xs font-semibold flex items-center justify-center
+                ${crop.status === 'Coming soon'
+                  ? 'bg-[#DC3545] w-[117px] h-[32px] pt-1 pb-1 pl-[11px] pr-[11px] rounded-[30px] border border-white'
+                  : 'bg-[#28A745] w-[87px] h-[32px] pt-1 pb-1 pl-[11px] pr-[11px] rounded-[30px] border border-white'
+                }
+              `}
+            >
               {crop.status}
             </span>
           </div>
@@ -56,15 +63,18 @@ const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true, onInvest }
             </div>
           </div>
         </div>
-
-        {showButton && (
+        <div className='flex justify-center items-center'>
+            {showButton && (
           <button 
             onClick={handleClick}
             className="mt-4 w-full h-[40px] rounded-lg border border-primary hover:bg-[#FAF3E7] text-primary font-bold hover:bg-[#f5e9d7] transition duration-300 text-sm"
           >
-            {crop.status === "Available" ? "Invest Now" : "Learn More"}
+            {crop.status === 'Coming soon' ? 'Invest Now' : 'Invest Now'}
           </button>
         )}
+        </div>
+
+      
       </div>
     </div>
   );

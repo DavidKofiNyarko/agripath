@@ -92,7 +92,7 @@ const HeroSection = () => {
 
         {/* CTA Button */}
         <button 
-          className="bg-primary hover:bg-green-700 text-primary-foreground font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-2xl transition duration-300 shadow-lg transform hover:scale-105 text-sm sm:text-base"
+          className="bg-primary hover:bg-green-700 text-primary-foreground font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-2xl transition duration-300 transform hover:scale-105 text-sm sm:text-base"
           onClick={handleInvestClick}
         >
           Start Investing
