@@ -82,7 +82,7 @@ export default function InvestmentFormModal({ isOpen, onClose }: InvestmentFormM
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); 
     setIsLoading(true);
-    const airtableBaseId = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID;
+     	 const airtableBaseId = process.env.NEXT_PUBLIC_AIRTABLE_BASE_ID;
     const airtableTableId= process.env.NEXT_PUBLIC_AIRTABLE_INVEST_TABLE_ID;
     const airtableApiKey= process.env.NEXT_PUBLIC_AIRTABLE_API_TOKEN;
     try {
@@ -107,7 +107,6 @@ export default function InvestmentFormModal({ isOpen, onClose }: InvestmentFormM
           })
           
         })
-     
       // console.log('Form submitted:', formData);
       setShowSuccess(true);
       setIsLoading(false);    

@@ -24,13 +24,13 @@ export const crops: Crop[] = [
     name: "Tomatoes",
     slug: "tomatoes",
     image: "/crops/Tomatoes.png",
-    price: "GHS 3,000",
-    unit: "per Unit",
-    roi: "ROI: 15-20%",
-    roiValue: "15-20%",
+    price: "GHS 4,765",
+    unit: "Per Unit",
+    roi: "ROI: 22-27%",
+    roiValue: "22-27%",
     duration: "3-4 Months",
     unitsSold: "3,295",
-    totalUnits: "5,000",
+    totalUnits: "20",
     status: "Available",
     description: "Invest in our high-yield tomato farming project",
     about: "Tomatoes remain a staple crop with consistent market demand, making them an excellent investment choice. Tomatoes are one of the most consumed vegetables worldwide, with high demand from households, food processors, and export markets. Investing in tomato farming guarantees strong market positioning and attractive returns.",
@@ -42,7 +42,7 @@ export const crops: Crop[] = [
       "Sustainability and Biodiversity",
       "Green Agriculture Practices"
     ],
-    maturityTime: "2027-09-30"
+    maturityTime: "Sept. 2025"
   },
   // {
   //   id: 2,
@@ -74,14 +74,14 @@ export const crops: Crop[] = [
     name: "Chilli Pepper",
     slug: "chilli-pepper",
     image: "/crops/Chilli peppers.png",
-    price: "GHS 3,000",
-    unit: "per Unit",
-    roi: "ROI: 15-20%",
-    roiValue: "15-20%",
+    price: "GHS 4,000",
+    unit: "Per Unit",
+    roi: "ROI: 25-35%",
+    roiValue: "25-35%",
     duration: "3-4 Months",
     unitsSold: "1,850",
-    totalUnits: "3,500",
-    status: "Available",
+    totalUnits: "",
+    status: "Coming soon",
     description: "Invest in our spicy chilli pepper farming project",
     about: "Chilli peppers are in high demand for local cuisine and export markets. Our chilli pepper farms use sustainable practices to grow high-quality, spicy varieties that command premium prices in the market.",
     benefits: [
@@ -92,7 +92,7 @@ export const crops: Crop[] = [
       "Sustainability and Biodiversity",
       "Green Agriculture Practices"
     ],
-    maturityTime: "2027-11-20"
+    maturityTime: "Coming Soon"
   },
   // {
   //   id: 4,
@@ -119,18 +119,45 @@ export const crops: Crop[] = [
   //   ],
   //   maturityTime: "2027-08-10"
   // },
+
+  {
+    id: 4,
+    name: "Cassava",
+    slug: "cassava",
+    image: "/crops/cassava.png",
+    price: "GHS 3,000",
+    unit: "Per Unit",
+    roi: "ROI: 25-35%",
+    roiValue: "25-35%",
+    duration: "2-3 Months",
+    unitsSold: "1,200",
+    totalUnits: "",
+    status: "Coming soon",
+    description: "Invest in our nutritious cassava farming project",
+    about: "Cassava is a drought-resistant crop that is a staple food in many regions. Our cassava farming projects focus on sustainable practices to ensure high yields and quality.",
+    benefits: [
+      "Quick growing cycle allows for multiple harvests per year",
+      "Low maintenance crop with good market demand",
+      "6-Monthly Returns",
+      "Eco-Friendly Farming",
+      "Sustainability and Biodiversity",
+      "Green Agriculture Practices"
+    ],
+    maturityTime: "Coming Soon"
+  },
+  
   {
     id: 5,
-    name: "Pepper",
+    name: "Habanero",
     slug: "pepper",
     image: "/crops/pepper.png",
-    price: "GHS 3,000",
-    unit: "per Unit",
-    roi: "ROI: 15-20%",
-    roiValue: "15-20%",
+    price: "GHS 3,525",
+    unit: "Per Unit",
+    roi: "ROI: 22-28%",
+    roiValue: "22-28%",
     duration: "3-4 Months",
     unitsSold: "2,100",
-    totalUnits: "3,000",
+    totalUnits: "20",
     status: "Available",
     description: "Invest in our versatile pepper farming project",
     about: "Bell peppers are versatile vegetables used in various cuisines worldwide. Our pepper farming projects utilize modern farming techniques to maximize yield and quality.",
@@ -142,20 +169,20 @@ export const crops: Crop[] = [
       "Sustainability and Biodiversity",
       "Green Agriculture Practices"
     ],
-    maturityTime: "2027-09-05"
+    maturityTime: "Sept. 2025"
   },
   {
     id: 6,
     name: "Sweet Potatoes",
     slug: "sweet-potatoes",
     image: "/crops/Potato.png",
-    price: "GHS 3,000",
-    unit: "per Unit",
-    roi: "ROI: 15-20%",
-    roiValue: "15-20%",
+    price: "GHS 3,800",
+    unit: "Per Unit",
+    roi: "ROI: 20-25%",
+    roiValue: "20-25%",
     duration: "4-5 Months",
     unitsSold: "980",
-    totalUnits: "2,000",
+    totalUnits: "20",
     status: "Available",
     description: "Invest in our nutritious sweet potato farming project",
     about: "Sweet potatoes are nutrient-rich root vegetables with growing demand in health-conscious markets. Our sweet potato farms focus on growing high-yield, nutritious varieties.",
@@ -167,58 +194,83 @@ export const crops: Crop[] = [
       "Sustainability and Biodiversity",
       "Green Agriculture Practices"
     ],
-    maturityTime: "2028-01-15"
+    maturityTime: "Sept. 2025"
   },
-  {
-    id: 7,
-    name: "Rice",
-    slug: "rice",
-    image: "/crops/rice.png",
+    {
+    id: 6,
+    name: "Bell Pepper",
+    slug: "bell-pepper",
+    image: "/crops/bell-pepper.jpg",
     price: "GHS 3,000",
-    unit: "per Unit",
-    roi: "ROI: 15-20%",
-    roiValue: "15-20%",
-    duration: "4-6 Months",
-    unitsSold: "1,500",
-    totalUnits: "3,000",
+    unit: "Per Unit",
+    roi: "ROI: 22-26%",
+    roiValue: "22-26%",
+    duration: "4-5 Months",
+    unitsSold: "980",
+    totalUnits: "20",
     status: "Available",
-    description: "Invest in our essential rice farming project",
-    about: "Rice is a staple food for billions of people worldwide. Our rice farming projects use sustainable irrigation and cultivation methods to produce high-quality rice varieties.",
+    description: "Invest in our nutritious bell pepper farming project",
+    about: "Bell peppers are nutrient-rich vegetables with growing demand in health-conscious markets. Our bell pepper farms focus on growing high-yield, nutritious varieties.",
     benefits: [
-      "Consistent demand across all economic conditions",
-      "Government support programs for rice cultivation",
+      "Long shelf life reduces post-harvest losses",
+      "Growing popularity in export markets",
       "Annual Returns",
       "Eco-Friendly Farming",
       "Sustainability and Biodiversity",
       "Green Agriculture Practices"
     ],
-    maturityTime: "2028-02-10"
+    maturityTime: "Sept. 2025"
   },
-  {
-    id: 8,
-    name: "Ginger",
-    slug: "ginger",
-    image: "/crops/ginger.png",
-    price: "GHS 3,000",
-    unit: "per Unit",
-    roi: "ROI: 15-20%",
-    roiValue: "15-20%",
-    duration: "9-10 Months",
-    unitsSold: "800",
-    totalUnits: "1,500",
-    status: "Available",
-    description: "Invest in our aromatic ginger farming project",
-    about: "Ginger is a high-value spice with applications in food, beverages, and medicinal products. Our ginger farming projects focus on organic cultivation of premium varieties.",
-    benefits: [
-      "High value per weight makes it profitable despite longer growing cycle",
-      "Strong export potential to international markets",
-      "Annual Returns",
-      "Eco-Friendly Farming",
-      "Sustainability and Biodiversity",
-      "Green Agriculture Practices"
-    ],
-    maturityTime: "2028-06-20"
-  }
+  // {
+  //   id: 7,
+  //   name: "Rice",
+  //   slug: "rice",
+  //   image: "/crops/rice.png",
+  //   price: "GHS 3,000",
+  //   unit: "per Unit",
+  //   roi: "ROI: 15-20%",
+  //   roiValue: "15-20%",
+  //   duration: "4-6 Months",
+  //   unitsSold: "1,500",
+  //   totalUnits: "3,000",
+  //   status: "Available",
+  //   description: "Invest in our essential rice farming project",
+  //   about: "Rice is a staple food for billions of people worldwide. Our rice farming projects use sustainable irrigation and cultivation methods to produce high-quality rice varieties.",
+  //   benefits: [
+  //     "Consistent demand across all economic conditions",
+  //     "Government support programs for rice cultivation",
+  //     "Annual Returns",
+  //     "Eco-Friendly Farming",
+  //     "Sustainability and Biodiversity",
+  //     "Green Agriculture Practices"
+  //   ],
+  //   maturityTime: "2028-02-10"
+  // },
+  // {
+  //   id: 8,
+  //   name: "Ginger",
+  //   slug: "ginger",
+  //   image: "/crops/ginger.png",
+  //   price: "GHS 3,000",
+  //   unit: "per Unit",
+  //   roi: "ROI: 15-20%",
+  //   roiValue: "15-20%",
+  //   duration: "9-10 Months",
+  //   unitsSold: "800",
+  //   totalUnits: "1,500",
+  //   status: "Available",
+  //   description: "Invest in our aromatic ginger farming project",
+  //   about: "Ginger is a high-value spice with applications in food, beverages, and medicinal products. Our ginger farming projects focus on organic cultivation of premium varieties.",
+  //   benefits: [
+  //     "High value per weight makes it profitable despite longer growing cycle",
+  //     "Strong export potential to international markets",
+  //     "Annual Returns",
+  //     "Eco-Friendly Farming",
+  //     "Sustainability and Biodiversity",
+  //     "Green Agriculture Practices"
+  //   ],
+  //   maturityTime: "2028-06-20"
+  // }
 ];
 
 export const getCropBySlug = (slug: string): Crop | undefined => {
