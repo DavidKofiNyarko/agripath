@@ -65,12 +65,12 @@ const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true, onInvest }
         </div>
         <div className='flex justify-center items-center'>
             {showButton && (
-          <button 
+            <button 
             onClick={handleClick}
-            className="mt-4 w-full h-[40px] rounded-lg border border-primary hover:bg-[#FAF3E7] text-primary font-bold hover:bg-[#f5e9d7] transition duration-300 text-sm"
-          >
+            className="w-68 h-10 flex items-center justify-center gap-2 py-2 px-0 rounded-lg border border-primary text-primary font-bold hover:bg-yellow-50 transition duration-300 text-sm"
+            >
             {crop.status === 'Coming soon' ? 'Invest Now' : 'Invest Now'}
-          </button>
+            </button>
         )}
         </div>
 
