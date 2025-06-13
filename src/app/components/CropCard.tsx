@@ -31,7 +31,14 @@ const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true, onInvest }
             className="w-full h-full object-cover"
           />
           <div className="absolute top-2 right-2">
-            <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
+            <span
+              className={`text-white text-xs font-semibold flex items-center justify-center
+                ${crop.status === 'Coming soon'
+                  ? 'bg-[#DC3545] w-[117px] h-[32px] pt-1 pb-1 pl-[11px] pr-[11px] rounded-[30px] border border-white'
+                  : 'bg-[#28A745] w-[87px] h-[32px] pt-1 pb-1 pl-[11px] pr-[11px] rounded-[30px] border border-white'
+                }
+              `}
+            >
               {crop.status}
             </span>
           </div>
@@ -39,32 +46,47 @@ const CropCard: React.FC<CropCardProps> = ({ crop, showButton = true, onInvest }
       </div>
 
       {/* Content */}
-      <div className="p-4 flex-1 flex flex-col justify-between">
-        <div>
-          <h3 className="text-lg font-bold text-gray-900 line-clamp-1">{crop.name}</h3>
-          
-          <div className="mt-1 flex items-baseline">
-            <span className="text-xl font-bold text-gray-900">{crop.price}</span>
-            <span className="ml-1 text-sm text-yellow-500">{crop.unit}</span>
-          </div>
-
-          <div className="mt-2">
-            <div className="text-sm text-gray-600">ROI: {crop.roiValue}</div>
-            <div className="text-sm text-gray-600 mt-0.5">Starting - {crop.maturityTime}</div>
-            <div className="flex items-center mt-0.5">
-              <span className="text-sm text-green-500">{crop.unitsSold} Units Available</span>
-            </div>
-          </div>
+      <div className="p-4 flex-1 flex flex-col h-[200px]">
+        <h3 className="text-lg font-bold text-gray-900 line-clamp-1">{crop.name}</h3>
+        
+        <div className="mt-1 flex items-baseline">
+          <span className="text-xl font-bold text-gray-900">{crop.price}</span>
+            <span className="ml-1 align-middle font-sans font-bold text-lg leading-7 tracking-normal text-yellow-400">/ {crop.unit}</span>
         </div>
 
-        {showButton && (
+        <div className="mt-2 flex-1">
+            <div className="text-sm font-bold text-black-600">ROI: {crop.roiValue}</div>
+            <div className="w-[288px] h-[20px] flex justify-between items-center mt-0.5">
+              {crop.maturityTime === 'Coming Soon' ? (
+                <div className="w-full h-[20px] flex items-center justify-start text-xs font-semibold text-black-600 leading-4 tracking-wider mt-1">
+                  Starting - Coming Soon
+                </div>
+              ) : (
+                <>
+                  <div className="w-[123px] h-[16px] flex items-center gap-[10px] text-xs font-semibold text-black-600 leading-4 -tracking-normal mt-1">
+                    Starting - {crop.maturityTime}
+                  </div>
+                  <span
+                    className="w-[137px] h-[20px] flex items-center gap-[10px] text-xs font-semibold text-green-500 leading-4 tracking-wider mt-1"
+                  >
+                    {`${crop.totalUnits} Units Available`}
+                  </span>
+                </>
+              )}
+            </div>
+        </div>
+        <div className='flex justify-center items-center'>
+            {showButton && (
           <button 
             onClick={handleClick}
-            className="mt-4 w-full h-[40px] rounded-lg border border-primary hover:bg-[#FAF3E7] text-primary font-bold hover:bg-[#f5e9d7] transition duration-300 text-sm"
+            className="w-[272px] h-[40px] gap-2 py-2 px-0 rounded-lg border border-primary hover:bg-[rgb(250,243,231)] text-primary font-bold hover:bg-[#f5e9d7] transition duration-300 text-sm"
           >
-            {crop.status === "Available" ? "Invest Now" : "Learn More"}
+            {crop.status === 'Coming soon' ? 'Invest Now' : 'Invest Now'}
           </button>
         )}
+        </div>
+
+      
       </div>
     </div>
   );
