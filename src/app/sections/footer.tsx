@@ -7,7 +7,7 @@ const AgripathFooter = () => {
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-10">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           {/* Logo & Tagline */}
-          <div className="flex flex-col items-center  md:items-start w-full md:w-1/2 mb-6 md:mb-0">
+          <div className="flex flex-col items-start  w-full md:w-1/2 mb-6 md:mb-0">
             <div className="flex items-center gap-3">
               <div className="bg-primary shadow-lg rounded-lg  flex items-center px-2  rounded-l-full">
               <img

@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 // Crop Data
 const crops = [
   { name: "Tomato", img: "/crops/Tomatoes.png" },
-  { name: "Chili Pepper", img: "/crops/Chili peppers.png" },
+  { name: "Chilli Pepper", img: "/crops/chilli-pepper.png" },
   { name: "Okro", img: "/crops/okro.png" },
   { name: "Pepper", img: "/crops/Pepper.png" },
   { name: "Potato", img: "/crops/Potato.png" },
