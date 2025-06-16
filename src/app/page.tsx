@@ -7,35 +7,38 @@ import AgripathFooter from "./sections/footer";
 import HeroSection from "./sections/HeroSection";
 import AvailableInvestments from "./sections/InvestmentsSection";
 import InvestmentOpportunitiesSection from "./sections/InvestmentOpportunitiesSection";
+import ComingSoonPage from "./sections/ComingSoonPage";
 
 const AgriPathLandingPage = () => {
   return (
-    <div className="min-h-screen font-sans">
-      {/* Navbar Component */}
-      <Navbar />
+    // <div className="min-h-screen font-sans">
+    //   {/* Navbar Component */}
+    //   <Navbar />
 
-      {/* Hero Section Component */}
-      <section id="home">
-        <HeroSection />
-      </section>
+    //   {/* Hero Section Component */}
+    //   <section id="home">
+    //     <HeroSection />
+    //   </section>
       
-      <section id="about">
-        <AboutSection />
-      </section>
+    //   <section id="about">
+    //     <AboutSection />
+    //   </section>
       
-      <section id="projects">
-        <InvestmentOpportunitiesSection />
-        <AvailableInvestments />
-      </section>
+    //   <section id="projects">
+    //     <InvestmentOpportunitiesSection />
+    //     <AvailableInvestments />
+    //   </section>
       
-      <HowItWorksAndFAQ />
+    //   <HowItWorksAndFAQ />
       
-      <section id="contact">
-        <ContactSection />
-      </section>
+    //   <section id="contact">
+    //     <ContactSection />
+    //   </section>
       
-      <AgripathFooter />
-    </div>
+    //   <AgripathFooter />
+    // </div>
+
+    <ComingSoonPage/>
   );
 };
 

@@ -14,9 +14,18 @@ const Navbar = () => {
   const closeModal = () => setIsModalOpen(false);
 
   const scrollToSection = useCallback((sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    // Check if we're on a legal page by looking at the current pathname
+    const isLegalPage = window.location.pathname.includes('/legal/');
+    
+    if (isLegalPage) {
+      // If on legal page, redirect to home page with the section hash
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // If on home page, just scroll to the section
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMenuOpen(false);
   }, []);

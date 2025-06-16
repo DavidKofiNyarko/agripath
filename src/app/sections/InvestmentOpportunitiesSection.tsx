@@ -16,26 +16,28 @@ const investmentOpportunities = [
   {
     id: 1,
     title: "Invest in Staple Crop Farms with High Returns",
-    description: "We grow essential crops like cassava, sweet potatoes, and High-value vegetables like tomatoes and peppers with expert agronomic support. Each cycle lasts 4-5 months, and produce is already under off-take agreements with buyers and processors.",
-    idealFor: "Investors looking for short-to-mid-term ROI with real social impact.",
+    description: "Gain returns from investing in essential root crops—cassava, and high-yield staple crops. Agripath's model leverages modern, sustainable practices and offers high-impact, high-return opportunities, empowering a new generation of African agriculture.",
+    idealFor: "Best for socially-driven investors seeking returns and local impact.",
     image: "/investments/cassava.png",
-    category: "Crop Farming"
+    category: "Root Crops"
   },
   {
     id: 2,
-    title: "Livestock Investment Program",
-    description: "Invest in our modern pig farming operations with proven track records. We use advanced breeding techniques and maintain high health standards. Each cycle offers competitive returns with managed risks.",
-    idealFor: "Investors seeking diversified agricultural portfolios with steady returns.",
-    image: "/investments/pigs.jpg",
-    category: "Livestock (Pigs)"
+    subtitle: "Fast-Growing. Market-Ready. Proven Demand.",
+    title: "Fund Sustainable Pig Farming with Market-Linked Returns",
+    description: "Drive the future of livestock farming by funding sustainable, high-welfare pig production. Agripath's pig farming projects are designed for efficiency, animal care, and strong returns, with a transparent financial ecosystem.",
+    idealFor: "Investors seeking predictable returns with social and animal welfare impact.",
+    image: "/investments/pigs.jpg", 
+    category: "Pig Farming"
   },
   {
     id: 3,
-    title: "High-Value Agricultural Projects",
-    description: "Premium agricultural projects including greenhouse farming, aquaculture, and specialized crop production. These projects offer higher returns with managed risk profiles.",
-    idealFor: "Sophisticated investors looking for premium returns in agriculture.",
+    subtitle: "Fast-Growing. Market-Ready. Proven Demand.",
+    title: "Fund Entire Farm Productions for Higher Returns and Deeper Impact",
+    description: "Become a key value chain investor and fund the setup of full-scale farm operations—crop, livestock, greenhouse, and more. Agripath's end-to-end farm projects offer the highest returns and the deepest impact.",
+    idealFor: "For those who want to maximize returns and create lasting change.",
     image: "/investments/project.png",
-    category: "High-Value Projects"
+    category: "Premium Projects"
   }
 ];
 
@@ -96,7 +98,7 @@ const InvestmentOpportunitiesSection = () => {
             }}
             className="flex justify-center gap-8 mb-8 relative"
           >
-            {['Crop Farming', 'Livestock (Pigs)', 'High-Value Projects'].map((category, index) => (
+            {['Root Crops', 'Pig Farming', 'Premium Projects'].map((category, index) => (
               <button
                 key={category}
                 onClick={() => goToSlide(index)}
@@ -147,6 +149,9 @@ const InvestmentOpportunitiesSection = () => {
                       }}
                       className="space-y-6"
                     >
+                        <span className="block text-sm font-semibold  mb-2">
+                          {investmentOpportunities[activeIndex].subtitle}
+                        </span>
                       <h3 className="text-2xl font-bold text-gray-900">
                         {investmentOpportunities[activeIndex].title}
                       </h3>

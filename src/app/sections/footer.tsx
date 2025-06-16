@@ -3,13 +3,13 @@ import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const AgripathFooter = () => {
   return (
-    <footer id='contact-us' className="bg-primary border-t-4 border-green-950 text-gray-100 text-sm">
+    <footer id='contact-us' className="bg-primary  text-gray-100 text-sm">
       <div className="max-w-7xl mx-auto px-4 py-8 md:py-10">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           {/* Logo & Tagline */}
-          <div className="flex flex-col items-center md:items-start w-full md:w-1/2 mb-6 md:mb-0">
+          <div className="flex flex-col items-center  md:items-start w-full md:w-1/2 mb-6 md:mb-0">
             <div className="flex items-center gap-3">
-              <div className="bg-primary shadow-lg rounded-lg  flex items-center  rounded-r-full">
+              <div className="bg-primary shadow-lg rounded-lg  flex items-center px-2  rounded-l-full">
               <img
                 src="/Logo.png"
                 alt="AgriPath Logo"
@@ -24,7 +24,7 @@ const AgripathFooter = () => {
             </div>
           </div>
           {/* Quick Links */}
-          <div className="flex flex-col md:w-1/5 mb-6 md:mb-0">
+          {/* <div className="flex flex-col md:w-1/5 mb-6 md:mb-0">
             <h4 className="text-green-200 font-semibold mb-2">Quick Links</h4>
             <ul className="space-y-1">
               <li><a href="#about" className="hover:text-green-400 transition">Who We Are</a></li>
@@ -33,9 +33,9 @@ const AgripathFooter = () => {
               <li><a href="#faqs" className="hover:text-green-400 transition">FAQs</a></li>
               <li><a href="#contact-us" className="hover:text-green-400 transition">Contact</a></li>
             </ul>
-          </div>
+          </div> */}
           {/* Legal Pages */}
-          <div className="flex flex-col md:w-1/5 mb-6 md:mb-0">
+          {/* <div className="flex flex-col md:w-1/5 mb-6 md:mb-0">
             <h4 className="text-green-200 font-semibold mb-2">Legal Pages</h4>
             <ul className="space-y-1">
               <li><a href="/legal/investment-terms" className="hover:text-green-400 transition">Terms & Conditions</a></li>
@@ -43,7 +43,7 @@ const AgripathFooter = () => {
               <li><a href="/legal/privacy-policy" className="hover:text-green-400 transition">Privacy Policy</a></li>
               <li><a href="/legal/refund-policy" className="hover:text-green-400 transition">Refund Policy</a></li>
             </ul>
-          </div>
+          </div> */}
           {/* Contact Info */}
           <div className="flex flex-col md:w-1/5 mb-6 md:mb-0">
             <h4 className="text-green-200 font-semibold mb-2">Contact Info</h4>
@@ -92,7 +92,7 @@ const AgripathFooter = () => {
         {/* Divider Line */}
         <div className="border-t border-gray-600 my-6"></div>
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-center items-center text-xs text-center md:text-left">
           <div>
             Copyright <span className="text-green-400 font-semibold">AgriPath</span> © 2025 All rights reserved.
           </div>

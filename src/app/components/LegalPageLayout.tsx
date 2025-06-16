@@ -20,19 +20,7 @@ const LegalPageLayout: React.FC<LegalPageLayoutProps> = ({
       <Navbar />
       
       {/* Hero Banner */}
-      <div className="bg-green-800 text-white text-center py-6 sm:py-8 relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 z-0 opacity-20">
-          <img 
-            src="/crops/hero/pattern.jpg" 
-            alt=""
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-            }}
-          />
-        </div>
-        
+      <div className="bg-green-800 pt-28 text-white text-center pb-8 relative overflow-hidden">
         <div className="relative z-10">
           <h1 className="text-2xl sm:text-3xl font-bold">{title}</h1>
           {lastUpdated && (
@@ -46,7 +34,7 @@ const LegalPageLayout: React.FC<LegalPageLayoutProps> = ({
         <div className="flex text-sm text-gray-600">
           <Link href="/" className="hover:text-green-600 transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900 font-medium">{title}</span>
+          <span className="text-primary font-semibold">{title}</span>
         </div>
       </div>
       
