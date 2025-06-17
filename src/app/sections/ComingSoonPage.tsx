@@ -65,11 +65,11 @@ const ComingSoonPage: React.FC = () => {
           <img
             src="/bg-logo.png"
             alt="Hero Logo"
-            className="w-48 h-48 object-cover filter brightness-[0.98]" />
+            className="w-48 h-48 sm:w-68 sm:h-68 object-cover filter brightness-[0.98]" />
         </div>
         {/* Headline */}
         <div className="relative z-10 flex flex-col items-center h-auto w-auto mb-6 mt-[300px] sm:mt-[350px] px-4">
-          <h1 className={`${gochiHand.className} font-bold text-5xl sm:text-4xl text-green-900 text-center  sm:leading-[4.2rem] tracking-wide align-middle mb-6 drop-shadow-sm`}>
+          <h1 className={`${gochiHand.className} font-bold text-5xl sm:text-6xl text-green-900 text-center   tracking-wide align-middle mb-6 drop-shadow-sm`}>
             Sustainable Agriculture <br />
             <span className='uppercase tracking-wider'>Meets Smart Investment</span>
           </h1>
