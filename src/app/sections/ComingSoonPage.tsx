@@ -1,9 +1,12 @@
 'use client'
+import React from 'react';
 import { Gochi_Hand } from "next/font/google";
 import InfiniteScrollCrops from "../components/InfiniteScrollCrops";
 import { motion } from 'framer-motion';
 import { Pin } from 'lucide-react';
 import AgripathFooter from "./footer";
+import WaitlistModal from "../components/WaitlistModal";
+import JoinWaitlistModal from "../components/JoinWaitlistModal";
 
 const gochiHand = Gochi_Hand({
   subsets: ["latin"],
@@ -45,6 +48,7 @@ const cropCategories = [
 ];
 
 const ComingSoonPage: React.FC = () => {
+  const [waitlistOpen, setWaitlistOpen] = React.useState(false);
   return (
     <div className="relative min-h-screen flex flex-col justify-between bg-white">
       {/* Hero Section */}
@@ -68,15 +72,18 @@ const ComingSoonPage: React.FC = () => {
             className="w-48 h-48 sm:w-68 sm:h-68 object-cover filter brightness-[0.98]" />
         </div>
         {/* Headline */}
-        <div className="relative z-10 flex flex-col items-center h-auto w-auto mb-6 mt-[300px] sm:mt-[350px] px-4">
-          <h1 className={`${gochiHand.className} font-bold text-5xl sm:text-6xl text-green-900 text-center   tracking-wide align-middle mb-6 drop-shadow-sm`}>
-            Sustainable Agriculture <br />
-            <span className='uppercase tracking-wider'>Meets Smart Investment</span>
-          </h1>
+        <div className="relative z-10 flex flex-col items-center w-full mb-6 mt-[300px] sm:mt-[350px] px-2">
+          <div className="flex flex-col items-center text-center w-full">
+            <h1 className={`${gochiHand.className} font-bold text-4xl sm:text-6xl w-1/2 sm:w-full text-green-900 tracking-wide drop-shadow-sm`}>
+              Sustainable Agriculture <br />
+            </h1>
+            <span className={`uppercase font-semibold text-3xl sm:text-6xl w-2/4 sm:w-full text-green-900`}>Meets Smart Investment</span>
+          </div>
+        
           <p className="font-sans font-medium text-xl sm:text-2xl leading-8 tracking-normal text-center align-middle text-gray-700 max-w-[1008px] mb-8">
             AgriPath is building the future of profitable agriculture in crop and livestock. We connect investors with high-value crop and livestock projects across Ghana. Join the waitlist and be the first to know.
           </p>
-          <button className="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold shadow-md hover:bg-primary/90 transition-all duration-300 transform hover:scale-[1.02] mb-4">
+          <button className="bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold shadow-md hover:bg-primary/90 transition-all duration-300 transform hover:scale-[1.02] mb-4" onClick={() => setWaitlistOpen(true)}>
             Join the Waitlist
           </button>
         </div>
@@ -126,7 +133,7 @@ const ComingSoonPage: React.FC = () => {
           </div>
         </motion.div>
         <div className="w-full flex justify-center mt-12">
-          <button className="text-primary border-2 border-primary px-8 py-3.5 rounded-lg font-semibold shadow-sm mb-4 relative overflow-hidden group transform hover:scale-[1.02] transition-all duration-300">
+          <button className="text-primary border-2 border-primary px-8 py-3.5 rounded-lg font-semibold shadow-sm mb-4 relative overflow-hidden group transform hover:scale-[1.02] transition-all duration-300" onClick={() => setWaitlistOpen(true)}>
             <span className="relative z-10 group-hover:text-primary-foreground transition-colors duration-300">Get Started Today</span>
             <div className="absolute bottom-0 left-0 w-full h-0 bg-primary transition-all duration-400 ease-out group-hover:h-full -z-0"></div>
           </button>
@@ -135,6 +142,7 @@ const ComingSoonPage: React.FC = () => {
 
       {/* Footer */}
       <AgripathFooter />
+      <JoinWaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
     </div>
   )
 }
