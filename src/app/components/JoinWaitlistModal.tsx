@@ -31,7 +31,7 @@ const userTypes = [
 const stepVariants = {
   initial: { opacity: 0, x: 16 },
   animate: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 180, damping: 30, duration: 0.22 } },
-  exit: { opacity: 0, x: -16, transition: { duration: 0.16 } },
+  exit: { opacity: 0, x: -12, transition: { duration: 0.16 } },
 };
 
 const JoinWaitlistModal: React.FC<JoinWaitlistModalProps> = ({ open, onClose }) => {
