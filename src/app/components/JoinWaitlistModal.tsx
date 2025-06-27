@@ -8,7 +8,7 @@ import { X, Check, AlertCircle, ArrowRight } from 'lucide-react';
 
 interface JoinWaitlistModalProps {
   open: boolean;
-  onClose: () => void;
+  onClose: () => void;   
 }
 
 const userTypes = [
