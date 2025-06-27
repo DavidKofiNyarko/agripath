@@ -31,30 +31,46 @@ const InfiniteScrollCrops = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 4,
+          centerPadding: "20px",
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: "15px",
         },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
+          centerPadding: "10px",
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1.5,
+          centerPadding: "40px",
         },
       },
     ],
   };
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="w-full overflow-hidden px-2 sm:px-4 md:px-6">
       <Slider {...settings}>
         {crops.map((crop, index) => (
-          <div key={`${crop.name}-${index}`} className="flex items-center justify-center px-2">
-            <div className="relative w-[200px] h-[200px] rounded-md overflow-hidden shadow-md bg-white">
+          <div key={`${crop.name}-${index}`} className="px-2 sm:px-3 md:px-4">
+            <div className="relative w-full max-w-[180px] sm:max-w-[200px] h-[150px] sm:h-[180px] md:h-[200px] rounded-md overflow-hidden shadow-md bg-white mx-auto">
               <img
                 src={crop.img}
                 alt={crop.name}
                 className="w-full h-full object-cover"
               />
-              <span className="absolute top-2 right-2 bg-green-900 text-white text-xs px-3 py-1 rounded-full shadow font-semibold">
+              <span className="absolute top-2 right-2 bg-green-900 text-white text-xs px-2 sm:px-3 py-1 rounded-full shadow font-semibold">
                 {crop.name}
               </span>
             </div>

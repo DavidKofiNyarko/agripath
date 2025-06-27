@@ -4,9 +4,10 @@ import { Gochi_Hand } from "next/font/google";
 import InfiniteScrollCrops from "../components/InfiniteScrollCrops";
 import { motion } from 'framer-motion';
 import { Pin } from 'lucide-react';
-import AgripathFooter from "./footer";
+// import AgripathFooter from "./footer";
 import WaitlistModal from "../components/WaitlistModal";
 import JoinWaitlistModal from "../components/JoinWaitlistModal";
+import Footer from './footer';
 
 const gochiHand = Gochi_Hand({
   subsets: ["latin"],
@@ -77,7 +78,7 @@ const ComingSoonPage: React.FC = () => {
             <h1 className={`${gochiHand.className} font-bold text-4xl sm:text-6xl w-1/2 sm:w-full text-green-900 tracking-wide drop-shadow-sm`}>
               Sustainable Agriculture <br />
             </h1>
-            <span className={`uppercase font-semibold text-3xl sm:text-6xl w-2/4 sm:w-full text-green-900`}>Meets Smart Investment</span>
+            <span className={`capitalize font-semibold text-3xl sm:text-6xl w-2/4 sm:w-full text-green-900 font-inter font-[700]`}>Meets Smart Investment</span>
           </div>
         
           <p className="font-sans font-medium text-xl sm:text-2xl leading-8 tracking-normal text-center align-middle text-gray-700 max-w-[1008px] mb-8">
@@ -141,7 +142,7 @@ const ComingSoonPage: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <AgripathFooter />
+      <Footer />
       <JoinWaitlistModal open={waitlistOpen} onClose={() => setWaitlistOpen(false)} />
     </div>
   )
