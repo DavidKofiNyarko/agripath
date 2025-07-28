@@ -119,7 +119,7 @@ const ComingSoonPage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-center text-center p-6 bg-white/80 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+                className="flex flex-col items-center text-center p-6 bg-white/80 rounded-xl  hover:shadow-md transition-shadow duration-300"
               >
                 <div className="relative mb-4 sm:mb-5 flex items-center gap-2">
                   <Pin className="text-red-500 mt-1.5 rotate-45" size={22} />

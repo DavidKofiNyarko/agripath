@@ -12,6 +12,9 @@ const crops = [
   { name: "Potato", img: "/crops/Potato.png" },
   // { name: "sticks", img: "/crops/Sticks.png" },
   { name: "Maize", img: "/crops/Maize.png" },
+  { name: "Bell Pepper", img: "/crops/Bell_Pepper.png" },
+  { name: "Pigs", img: "/crops/Pigs.png" },
+  {name:"Broilers", img:"/crops/Broiler.png"},
 ];
 
 const InfiniteScrollCrops = () => {
