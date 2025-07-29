@@ -14,7 +14,7 @@ const gochiHand = Gochi_Hand({
   weight: "400",
   display: "swap",
 });
-
+// template
 const howItWorksSteps = [
   {
     id: 1,
